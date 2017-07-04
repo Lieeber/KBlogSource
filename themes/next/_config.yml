@@ -14,7 +14,7 @@ keywords: "Hexo, NexT"
 rss:
 
 # Specify the date when the site was setup
-#since: 2015
+since: 2015
 
 # icon between year and author @Footer
 authoricon: heart
@@ -341,11 +341,11 @@ changyan:
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.
-#baidushare:
-##  type: button
+#baidushare: true
+##  type: slide
 
 # Share
-#jiathis:
+jiathis: true
 # Warning: JiaThis does not support https.
 #add_this_id:
 
@@ -426,7 +426,7 @@ leancloud_visitors:
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
   # count values only if the other configs are false
-  enable: false
+  enable: true
   # custom uv span for the whole site
   site_uv: true
   site_uv_header: <i class="fa fa-user"></i>
@@ -499,7 +499,7 @@ exturl: false
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
 #! ---------------------------------------------------------------
 
-# Motion
+# Motion 设置页面加载的动画效果
 use_motion: true
 
 # Fancybox
@@ -529,7 +529,7 @@ pace_theme: pace-theme-minimal
 canvas_nest: false
 
 # three_waves
-three_waves: false
+three_waves: true
 
 # canvas_lines
 canvas_lines: false
