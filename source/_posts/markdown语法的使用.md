@@ -124,11 +124,12 @@ public static void main(String ..args){
 
 ### 实现页面内跳转
 [锚点](#index)
-<span id = "index">跳转到这里</span>
+<br>
+<span id = "index">跳转到这里</span><br>
 语法：
 ```
 [锚点](#index)
-<span id = "index">hehe</span>
+<span id = "index">跳转到这里</span>
 ```
 
 ### 配合html,css使用
@@ -141,15 +142,19 @@ public static void main(String ..args){
 <font color=gray size=10>color=gray</font></br>
 语法：
 ```
-<font face="黑体">我是黑体字</font>
-<font face="微软雅黑">我是微软雅黑</font>
-<font face="STCAIYUN">我是华文彩云</font>
-<font color=#0099ff size=7 face="黑体">color=#0099ff size=72 face="黑体"</font>
-<font color=#00ffff size=72>color=#00ffff</font>
-<font color=gray size=72>color=gray</font>
+<font face="黑体">我是黑体字</font></br>
+<font face="微软雅黑">我是微软雅黑</font></br>
+<font face="STCAIYUN">我是华文彩云</font></br>
+<font color=#0099ff size=5 face="黑体">color=#0099ff size=72 face="黑体"</font></br>
+<font color=#00ffff size=4>color=#00ffff</font></br>
+<font color=gray size=10>color=gray</font></br>
 ```
+
+html样式可以和Markdown语法组合起来使用，比如可以指定超链接的颜色。<br>
+这是一个跳转到博客首页的连接[<font color=#0099ff>首页</font>](http://www.lieeber.com/ "我的首页")
+语法：`这是一个跳转到博客首页的连接[<font color=#0099ff>首页</font>](http://www.lieeber.com/ "我的首页")`
 #### 设置背景色
 <table><tr><td bgcolor=orange>黄色背景：orange</td></tr></table>
 
 
-[^1]: 注脚内容
+[^1]: 脚注内容
