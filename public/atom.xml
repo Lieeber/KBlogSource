@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-05T09:59:40.000Z</updated>
+  <updated>2017-07-05T10:50:28.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,57 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hexo使用上的一些小tips</title>
+    <link href="http://yoursite.com/2017/05/15/Hexo%E4%BD%BF%E7%94%A8%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8Ftips/"/>
+    <id>http://yoursite.com/2017/05/15/Hexo使用上的一些小tips/</id>
+    <published>2017-05-15T04:39:04.000Z</published>
+    <updated>2017-07-05T10:50:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="更换next主题的背景"><a class="header-anchor" href="#更换next主题的背景">¶</a>更换next主题的背景</h3>
+<ol>
+<li>将喜欢的背景图放到project–&gt;themes–&gt;next–&gt;source–&gt;images目录下。</li>
+<li>打开project–&gt;themes–&gt;next–&gt;source–&gt;css–&gt;_custom–&gt;custom.styl文件，加入代码
+<code>body { background:url(/images/imagename.jpg);}</code></li>
+<li>重新编译项目就OK了。</li>
+</ol>
+<a id="more"></a>
+<h3 id="markdown语法中实现添加脚注功能"><a class="header-anchor" href="#markdown语法中实现添加脚注功能">¶</a>Markdown语法中实现添加脚注功能</h3>
+<p>hexo默认的渲染组件，是不能实现添加脚注功能的，因此需要安装新的渲染组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm un hexo-renderer-marked --save</div><div class="line">$ npm i hexo-renderer-markdown-it --save</div></pre></td></tr></table></figure>
+<p>打开项目_config.yml文件，在文中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">markdown:</div><div class="line">  render:</div><div class="line">    html: true</div><div class="line">    xhtmlOut: false</div><div class="line">    breaks: false</div><div class="line">    linkify: true</div><div class="line">    typographer: true</div><div class="line">    quotes: &apos;“”‘’&apos;</div><div class="line">  plugins:</div><div class="line">    - markdown-it-footnote</div><div class="line">    - markdown-it-sup</div><div class="line">    - markdown-it-sub</div><div class="line">    - markdown-it-abbr</div><div class="line">  anchors:</div><div class="line">    level: 2</div><div class="line">    collisionSuffix: &apos;v&apos;</div><div class="line">    permalink: true</div><div class="line">    permalinkClass: header-anchor</div><div class="line">    permalinkSymbol: ¶</div></pre></td></tr></table></figure>
+<p>重新编译后就可以使用脚注了。</p>
+<p>测试发现，直接跑hexo server没有效果，需要发布后才能看到脚注的实现效果</p>
+<p>脚注的使用方法可以在这是一个跳转到博客首页的连接<a href="http://www.lieeber.com/2017/01/22/markdown%E8%AF%AD%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Markdown语法的使用" target="_blank" rel="external"><font color="#0099ff">Markdown语法的使用</font></a>中查看</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;更换next主题的背景&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#更换next主题的背景&quot;&gt;¶&lt;/a&gt;更换next主题的背景&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;将喜欢的背景图放到project–&amp;gt;themes–&amp;gt;next–&amp;gt;source–&amp;gt;images目录下。&lt;/li&gt;
+&lt;li&gt;打开project–&amp;gt;themes–&amp;gt;next–&amp;gt;source–&amp;gt;css–&amp;gt;_custom–&amp;gt;custom.styl文件，加入代码
+&lt;code&gt;body { background:url(/images/imagename.jpg);}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;重新编译项目就OK了。&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="博客" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Markdown语法的使用</title>
-    <link href="http://yoursite.com/2017/01/22/markdown%E8%AF%AD%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2017/01/22/markdown语法的使用/</id>
+    <link href="http://yoursite.com/2017/01/22/Markdown%E8%AF%AD%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2017/01/22/Markdown语法的使用/</id>
     <published>2017-01-22T04:39:04.000Z</published>
-    <updated>2017-07-05T09:59:40.000Z</updated>
+    <updated>2017-07-05T10:47:17.000Z</updated>
     
     <content type="html"><![CDATA[<p>MarkDown语法比较简单，能够很轻松的学会，但如果搭配html的语法使用，能够实现更多复杂的效果。</p>
 <h3 id="标题"><a class="header-anchor" href="#标题">¶</a>标题</h3>
@@ -121,7 +167,9 @@
 <p><s>这是一条被删除文本</s>
 语法：<code>~~这是一条被删除文本~~</code></p>
 <h3 id="脚注"><a class="header-anchor" href="#脚注">¶</a>脚注</h3>
-<p>这是一个脚注<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
+<p>这是一个脚注<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。
+语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">这是一个脚注[^1]。</div><div class="line">脚注须使用数字，然后再文章末尾加上&quot;[^1]: 脚注内容&quot;即可</div></pre></td></tr></table></figure>
 <h3 id="实现页面内跳转"><a class="header-anchor" href="#实现页面内跳转">¶</a>实现页面内跳转</h3>
 <p><a href="#index">锚点</a>
 <br>
@@ -164,7 +212,7 @@
     
     </summary>
     
-      <category term="Markdown" scheme="http://yoursite.com/categories/Markdown/"/>
+      <category term="博客" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2/"/>
     
     
       <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
@@ -176,10 +224,11 @@
     <link href="http://yoursite.com/2016/12/22/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%AE%8C%E6%88%90%EF%BC%8C%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E6%AD%A5%E9%AA%A4/"/>
     <id>http://yoursite.com/2016/12/22/博客搭建完成，记录一下步骤/</id>
     <published>2016-12-22T04:39:04.000Z</published>
-    <updated>2017-07-05T09:43:45.000Z</updated>
+    <updated>2017-07-05T10:37:45.000Z</updated>
     
     <content type="html"><![CDATA[<p>  一直想搭建一个自己心仪的博客系统，把自己零散的知识系统给整理一下。可惜总是觉得网上的模板太丑而没有下手。学习过很多次自定义控件，学了又忘，忘了再学，遥遥无期。因此搭建一个博客，构建自己的知识体系，非常具有必要性。
   花了一天时间，使用hexo配上next主题，搭建了自己喜欢的博客。简单记录一下搭建的过程。</p>
+<a id="more"></a>
 <h2 id="环境配置"><a class="header-anchor" href="#环境配置">¶</a>环境配置</h2>
 <blockquote>
 <ul>
@@ -188,7 +237,6 @@
 <li>在github上创建仓库：<a href="http://github.youtname.io" target="_blank" rel="external">github.youtname.io</a></li>
 </ul>
 </blockquote>
-<a id="more"></a>
 <h2 id="安装hexo"><a class="header-anchor" href="#安装hexo">¶</a>安装hexo</h2>
 <p>在电脑上选择一个文件夹，打开终端进入到该文件夹目录下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g hexo </div><div class="line"> </div><div class="line">hexo init </div><div class="line"></div><div class="line">hexo generate</div><div class="line"></div><div class="line">hexo server</div></pre></td></tr></table></figure>
@@ -209,18 +257,10 @@
     
       &lt;p&gt;  一直想搭建一个自己心仪的博客系统，把自己零散的知识系统给整理一下。可惜总是觉得网上的模板太丑而没有下手。学习过很多次自定义控件，学了又忘，忘了再学，遥遥无期。因此搭建一个博客，构建自己的知识体系，非常具有必要性。
   花了一天时间，使用hexo配上next主题，搭建了自己喜欢的博客。简单记录一下搭建的过程。&lt;/p&gt;
-&lt;h2 id=&quot;环境配置&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#环境配置&quot;&gt;¶&lt;/a&gt;环境配置&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;安装node，直接去&lt;a href=&quot;https://nodejs.org/en/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;font color=&quot;#0099ff&quot;&gt;node官网&lt;/font&gt;&lt;/a&gt;官网下载安装即可，安装后就可以在终端使用npm命令了。&lt;/li&gt;
-&lt;li&gt;安装git。&lt;/li&gt;
-&lt;li&gt;在github上创建仓库：&lt;a href=&quot;http://github.youtname.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github.youtname.io&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
     
     </summary>
     
-      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+      <category term="博客" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2/"/>
     
     
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
