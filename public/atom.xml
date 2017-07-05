@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-05T01:27:13.000Z</updated>
+  <updated>2017-07-05T09:53:53.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,89 +16,210 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>第二篇文章</title>
-    <link href="http://yoursite.com/2017/07/05/2014-11-12-SpannableString%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2017/07/05/2014-11-12-SpannableString的使用/</id>
-    <published>2017-07-05T01:27:13.000Z</published>
-    <updated>2017-07-05T01:27:13.000Z</updated>
+    <title>Markdown语法的使用</title>
+    <link href="http://yoursite.com/2017/01/22/markdown%E8%AF%AD%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2017/01/22/markdown语法的使用/</id>
+    <published>2017-01-22T04:39:04.000Z</published>
+    <updated>2017-07-05T09:53:53.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="这个是标题"><a href="#这个是标题" class="headerlink" title="这个是标题"></a>这个是标题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>我这哦里 翻到了反倒兰僧分类根据坑带饭狂龙干放冷箭分开干森凯僧日欧戳三日尽管分散<br>就跟开干分开干很开警告森竣<br>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <content type="html"><![CDATA[<p>MarkDown语法比较简单，能够很轻松的学会，但如果搭配html的语法使用，能够实现更多复杂的效果。</p>
+<h3 id="标题"><a class="header-anchor" href="#标题">¶</a>标题</h3>
+<p>在文字前面添加#即可实现标题效果
+<code># 一级标题</code>
+<code>## 二级标题</code>
+<code>### 三级标题</code>
+依此类推，总共可以创建六级标题</p>
+<a id="more"></a>
+<h3 id="引用文字"><a class="header-anchor" href="#引用文字">¶</a>引用文字</h3>
+<p>在文字前添加&gt;</p>
+<blockquote>
+<p>这是一级引用</p>
+<blockquote>
+<p>这是二级引用</p>
+<blockquote>
+<p>这是三级引用</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>语法：
+<code>&gt; 这是一段引用。</code></p>
+<h3 id="添加超连接"><a class="header-anchor" href="#添加超连接">¶</a>添加超连接</h3>
+<p>这是一个跳转到博客首页的连接<a href="http://www.lieeber.com/" title="我的首页" target="_blank" rel="external"><font color="#0099ff">首页</font></a>
+语法：<code>[首页](http://www.lieeber.com/ &quot;我的首页&quot;)</code></p>
+<h3 id="添加图片"><a class="header-anchor" href="#添加图片">¶</a>添加图片</h3>
+<img width="150" height="150" align="center" src="http://www.lieeber.com/images/lieeber.jpg">
+<p>语法：</p>
+<ol>
+<li><code>![图片](https://mgpath/xxx.jpg)</code></li>
+<li><code>&lt;img width=&quot;150&quot; height=&quot;150&quot; align=center src=&quot;mgpath/xxx.jpg&quot;/&gt;</code></li>
+</ol>
+<p>第一种是使用的Markdown自带的添加语法，无法控制图片的大小和位置，第二种是html的语法，可以指定图片的大小和位置，不过对于Markdown语法，我们可以结合div来控制图片的位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div align=center&gt;</div><div class="line">![图片](https://mgpath/xxx.jpg)</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="分割线"><a class="header-anchor" href="#分割线">¶</a>分割线</h3>
+<hr>
+<p>语法：<code>***</code></p>
+<h3 id="列表"><a class="header-anchor" href="#列表">¶</a>列表</h3>
+<h4 id="无序列表"><a class="header-anchor" href="#无序列表">¶</a>无序列表</h4>
+<ul>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+</ul>
+<p>语法：<code>在需要列表样式的文字前添加&quot;-&quot;或者&quot;*&quot;</code></p>
+<h4 id="有序列表"><a class="header-anchor" href="#有序列表">¶</a>有序列表</h4>
+<ol>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+</ol>
+<p>语法：<code>在需要列表样式的文字前添加&quot;1.&quot;，依次增加。</code></p>
+<h3 id="粗体与斜体"><a class="header-anchor" href="#粗体与斜体">¶</a>粗体与斜体</h3>
+<p><strong>这个是粗体</strong>
+<em>这个是斜体</em>
+语法：
+<code>**这个是粗体**</code>
+<code>*这个是斜体*</code></p>
+<h3 id="表格"><a class="header-anchor" href="#表格">¶</a>表格</h3>
+<table>
+<thead>
+<tr>
+<th>书籍</th>
+<th style="text-align:right">价格</th>
+<th style="text-align:center">作者</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>金瓶梅</td>
+<td style="text-align:right">\￥30</td>
+<td style="text-align:center">小明</td>
+</tr>
+<tr>
+<td>西厢记</td>
+<td style="text-align:right">\￥49</td>
+<td style="text-align:center">小华</td>
+</tr>
+<tr>
+<td>计算机原理</td>
+<td style="text-align:right">\￥50</td>
+<td style="text-align:center">韩梅梅</td>
+</tr>
+</tbody>
+</table>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">| 书籍         | 价格   |  作者    |</div><div class="line">| ---------   | -----: | :----:  |</div><div class="line">| 金瓶梅       | \￥30  |   小明   |</div><div class="line">| 西厢记       | \￥49  |   小华   |</div><div class="line">| 计算机原理    | \￥50  |  韩梅梅  |</div><div class="line"></div><div class="line">* ------:为右对齐。 </div><div class="line">* :------为左对齐。 </div><div class="line">* :------:为居中对齐。 </div><div class="line">* -------为使用默认居中对齐</div></pre></td></tr></table></figure>
+<h3 id="阅读全文"><a class="header-anchor" href="#阅读全文">¶</a>阅读全文</h3>
+<p><code>&lt;!-- more --&gt;</code></p>
+<h3 id="代码块："><a class="header-anchor" href="#代码块：">¶</a>代码块：</h3>
+<h4 id="单行代码块："><a class="header-anchor" href="#单行代码块：">¶</a>单行代码块：</h4>
+<p><code>public static void main(String args)</code>
+语法：在代码块左右分别添加一个´</p>
+<h4 id="多行代码块"><a class="header-anchor" href="#多行代码块">¶</a>多行代码块</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public static void main(String ..args)&#123;</div><div class="line">    System.out.println(&quot;hello Markdown!&quot;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>语法：在代码块左右分别添加三个´</p>
+<h3 id="删除线"><a class="header-anchor" href="#删除线">¶</a>删除线</h3>
+<p><s>这是一条被删除文本</s>
+语法：<code>~~这是一条被删除文本~~</code></p>
+<h3 id="脚注"><a class="header-anchor" href="#脚注">¶</a>脚注</h3>
+<p>这是一个脚注<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
+<h3 id="实现页面内跳转"><a class="header-anchor" href="#实现页面内跳转">¶</a>实现页面内跳转</h3>
+<p><a href="#index">锚点</a>
+<span id="index">跳转到这里</span>
+语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[锚点](#index)</div><div class="line">&lt;span id = &quot;index&quot;&gt;hehe&lt;/span&gt;</div></pre></td></tr></table></figure>
+<h3 id="配合html-css使用"><a class="header-anchor" href="#配合html-css使用">¶</a>配合html,css使用</h3>
+<h4 id="设置字体颜色-样式-大小等"><a class="header-anchor" href="#设置字体颜色-样式-大小等">¶</a>设置字体颜色，样式，大小等</h4>
+<p><font face="黑体">我是黑体字</font><br>
+<font face="微软雅黑">我是微软雅黑</font><br>
+<font face="STCAIYUN">我是华文彩云</font><br>
+<font color="#0099ff" size="5" face="黑体">color=#0099ff size=72 face=&quot;黑体&quot;</font><br>
+<font color="#00ffff" size="4">color=#00ffff</font><br>
+<font color="gray" size="10">color=gray</font><br>
+语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;font face=&quot;黑体&quot;&gt;我是黑体字&lt;/font&gt;</div><div class="line">&lt;font face=&quot;微软雅黑&quot;&gt;我是微软雅黑&lt;/font&gt;</div><div class="line">&lt;font face=&quot;STCAIYUN&quot;&gt;我是华文彩云&lt;/font&gt;</div><div class="line">&lt;font color=#0099ff size=7 face=&quot;黑体&quot;&gt;color=#0099ff size=72 face=&quot;黑体&quot;&lt;/font&gt;</div><div class="line">&lt;font color=#00ffff size=72&gt;color=#00ffff&lt;/font&gt;</div><div class="line">&lt;font color=gray size=72&gt;color=gray&lt;/font&gt;</div></pre></td></tr></table></figure>
+<h4 id="设置背景色"><a class="header-anchor" href="#设置背景色">¶</a>设置背景色</h4>
+<table><tr><td bgcolor="orange">黄色背景：orange</td></tr></table>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>注脚内容 <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;MarkDown语法比较简单，能够很轻松的学会，但如果搭配html的语法使用，能够实现更多复杂的效果。&lt;/p&gt;
+&lt;h3 id=&quot;标题&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#标题&quot;&gt;¶&lt;/a&gt;标题&lt;/h3&gt;
+&lt;p&gt;在文字前面添加#即可实现标题效果
+&lt;code&gt;# 一级标题&lt;/code&gt;
+&lt;code&gt;## 二级标题&lt;/code&gt;
+&lt;code&gt;### 三级标题&lt;/code&gt;
+依此类推，总共可以创建六级标题&lt;/p&gt;
     
     </summary>
     
+      <category term="Markdown" scheme="http://yoursite.com/categories/Markdown/"/>
+    
+    
+      <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
     
   </entry>
   
   <entry>
-    <title>标签测试文章</title>
-    <link href="http://yoursite.com/2017/07/05/index/"/>
-    <id>http://yoursite.com/2017/07/05/index/</id>
-    <published>2017-07-05T01:27:13.000Z</published>
-    <updated>2017-07-05T01:27:13.000Z</updated>
+    <title>博客搭建完成，记录一下。</title>
+    <link href="http://yoursite.com/2016/12/22/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%AE%8C%E6%88%90%EF%BC%8C%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E6%AD%A5%E9%AA%A4/"/>
+    <id>http://yoursite.com/2016/12/22/博客搭建完成，记录一下步骤/</id>
+    <published>2016-12-22T04:39:04.000Z</published>
+    <updated>2017-07-05T09:43:45.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <content type="html"><![CDATA[<p>  一直想搭建一个自己心仪的博客系统，把自己零散的知识系统给整理一下。可惜总是觉得网上的模板太丑而没有下手。学习过很多次自定义控件，学了又忘，忘了再学，遥遥无期。因此搭建一个博客，构建自己的知识体系，非常具有必要性。
+  花了一天时间，使用hexo配上next主题，搭建了自己喜欢的博客。简单记录一下搭建的过程。</p>
+<h2 id="环境配置"><a class="header-anchor" href="#环境配置">¶</a>环境配置</h2>
+<blockquote>
+<ul>
+<li>安装node，直接去<a href="https://nodejs.org/en/" target="_blank" rel="external"><font color="#0099ff">node官网</font></a>官网下载安装即可，安装后就可以在终端使用npm命令了。</li>
+<li>安装git。</li>
+<li>在github上创建仓库：<a href="http://github.youtname.io" target="_blank" rel="external">github.youtname.io</a></li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<h2 id="安装hexo"><a class="header-anchor" href="#安装hexo">¶</a>安装hexo</h2>
+<p>在电脑上选择一个文件夹，打开终端进入到该文件夹目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g hexo </div><div class="line"> </div><div class="line">hexo init </div><div class="line"></div><div class="line">hexo generate</div><div class="line"></div><div class="line">hexo server</div></pre></td></tr></table></figure>
+<p>通过以上步骤，在本地已经启动了一个博客服务了，在浏览器中输入<a href="localhost:4000" target="_blank" rel="external"><font color="#0099ff">localhost:4000</font></a>即可看到</p>
+<h2 id="将博客发布到github"><a class="header-anchor" href="#将博客发布到github">¶</a>将博客发布到github</h2>
+<p>打开初始化hexo的目录，打开文件_config.yml，在文件底部加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/yourname/yourname.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>然后再终端输入命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line"></div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+<p>代码就会自动帮你push到你的github中的yournname.github.io工程下面，通过网址yourname.github.io就可以顺利访问了。</p>
+<h2 id="主题更换"><a class="header-anchor" href="#主题更换">¶</a>主题更换</h2>
+<p>hexo默认使用主题landscape，需要替换成next主题，通过<a href="http://theme-next.iissnan.com/" target="_blank" rel="external"><font color="#0099ff">next官网</font></a>提供的操作步骤，即可进行主题替换。</p>
+<h2 id="跨pc操作"><a class="header-anchor" href="#跨pc操作">¶</a>跨PC操作</h2>
+<p>建议把初始化hexo博客文件夹下的代码上传到github，当需要去其他pc上操作博客的时候，拉取代码，使用hexo的命令进行编译即可。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;  一直想搭建一个自己心仪的博客系统，把自己零散的知识系统给整理一下。可惜总是觉得网上的模板太丑而没有下手。学习过很多次自定义控件，学了又忘，忘了再学，遥遥无期。因此搭建一个博客，构建自己的知识体系，非常具有必要性。
+  花了一天时间，使用hexo配上next主题，搭建了自己喜欢的博客。简单记录一下搭建的过程。&lt;/p&gt;
+&lt;h2 id=&quot;环境配置&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#环境配置&quot;&gt;¶&lt;/a&gt;环境配置&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;安装node，直接去&lt;a href=&quot;https://nodejs.org/en/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;font color=&quot;#0099ff&quot;&gt;node官网&lt;/font&gt;&lt;/a&gt;官网下载安装即可，安装后就可以在终端使用npm命令了。&lt;/li&gt;
+&lt;li&gt;安装git。&lt;/li&gt;
+&lt;li&gt;在github上创建仓库：&lt;a href=&quot;http://github.youtname.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github.youtname.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
     
     
-      <category term="Testing" scheme="http://yoursite.com/tags/Testing/"/>
-    
-      <category term="Another Tag" scheme="http://yoursite.com/tags/Another-Tag/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello lieeber</title>
-    <link href="http://yoursite.com/2017/07/04/hello-world/"/>
-    <id>http://yoursite.com/2017/07/04/hello-world/</id>
-    <published>2017-07-04T10:13:47.000Z</published>
-    <updated>2017-07-04T10:13:47.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
   </entry>
   
