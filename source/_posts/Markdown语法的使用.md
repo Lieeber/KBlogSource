@@ -3,7 +3,7 @@ title: Markdown语法的使用
 tags:
   - Markdown
 categories:
-  - Markdown
+  - 博客
 date: 2017-01-22 12:39:04
 ---
 MarkDown语法比较简单，能够很轻松的学会，但如果搭配html的语法使用，能够实现更多复杂的效果。
@@ -121,7 +121,11 @@ public static void main(String ..args){
 
 ### 脚注
 这是一个脚注[^1]。
-
+语法：
+```
+这是一个脚注[^1]。
+脚注须使用数字，然后再文章末尾加上"[^1]: 脚注内容"即可
+```
 ### 实现页面内跳转
 [锚点](#index)
 <br>
