@@ -321,7 +321,7 @@ disqus:
 #hypercomments_id:
 
 # Gentie productKey
-#gentie_productKey:
+gentie_productKey: 54270e564b8043759233e4d5e4a32650
 
 # changyan
 changyan:
@@ -526,7 +526,7 @@ pace: false
 pace_theme: pace-theme-minimal
 
 # Canvas-nest
-canvas_nest: true
+canvas_nest: false
 
 # three_waves
 three_waves: true
