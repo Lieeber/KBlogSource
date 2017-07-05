@@ -10,7 +10,7 @@ date: 2017-05-15 12:39:04
 
 ### 更换next主题的背景
 1. 将喜欢的背景图放到project-->themes-->next-->source-->images目录下。
-2. 打开project-->themes-->next-->source-->css-->_custom-->custom.styl文件，加入代码
+2. 打开project-->themes-->next-->source-->css-->_custom-->custom.styl文件，加入代码<br>
 `body { background:url(/images/imagename.jpg);}`
 3. 重新编译项目就OK了。
 

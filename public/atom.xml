@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-05T10:50:28.000Z</updated>
+  <updated>2017-07-05T10:53:37.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="http://yoursite.com/2017/05/15/Hexo%E4%BD%BF%E7%94%A8%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8Ftips/"/>
     <id>http://yoursite.com/2017/05/15/Hexo使用上的一些小tips/</id>
     <published>2017-05-15T04:39:04.000Z</published>
-    <updated>2017-07-05T10:50:28.000Z</updated>
+    <updated>2017-07-05T10:53:37.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="更换next主题的背景"><a class="header-anchor" href="#更换next主题的背景">¶</a>更换next主题的背景</h3>
 <ol>
 <li>将喜欢的背景图放到project–&gt;themes–&gt;next–&gt;source–&gt;images目录下。</li>
-<li>打开project–&gt;themes–&gt;next–&gt;source–&gt;css–&gt;_custom–&gt;custom.styl文件，加入代码
+<li>打开project–&gt;themes–&gt;next–&gt;source–&gt;css–&gt;_custom–&gt;custom.styl文件，加入代码<br>
 <code>body { background:url(/images/imagename.jpg);}</code></li>
 <li>重新编译项目就OK了。</li>
 </ol>
@@ -37,7 +37,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">markdown:</div><div class="line">  render:</div><div class="line">    html: true</div><div class="line">    xhtmlOut: false</div><div class="line">    breaks: false</div><div class="line">    linkify: true</div><div class="line">    typographer: true</div><div class="line">    quotes: &apos;“”‘’&apos;</div><div class="line">  plugins:</div><div class="line">    - markdown-it-footnote</div><div class="line">    - markdown-it-sup</div><div class="line">    - markdown-it-sub</div><div class="line">    - markdown-it-abbr</div><div class="line">  anchors:</div><div class="line">    level: 2</div><div class="line">    collisionSuffix: &apos;v&apos;</div><div class="line">    permalink: true</div><div class="line">    permalinkClass: header-anchor</div><div class="line">    permalinkSymbol: ¶</div></pre></td></tr></table></figure>
 <p>重新编译后就可以使用脚注了。</p>
 <p>测试发现，直接跑hexo server没有效果，需要发布后才能看到脚注的实现效果</p>
-<p>脚注的使用方法可以在这是一个跳转到博客首页的连接<a href="http://www.lieeber.com/2017/01/22/markdown%E8%AF%AD%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Markdown语法的使用" target="_blank" rel="external"><font color="#0099ff">Markdown语法的使用</font></a>中查看</p>
+<p>脚注的使用方法可以在<a href="http://www.lieeber.com/2017/01/22/markdown%E8%AF%AD%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Markdown语法的使用" target="_blank" rel="external"><font color="#0099ff">Markdown语法的使用</font></a>中查看</p>
 ]]></content>
     
     <summary type="html">
@@ -45,7 +45,7 @@
       &lt;h3 id=&quot;更换next主题的背景&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#更换next主题的背景&quot;&gt;¶&lt;/a&gt;更换next主题的背景&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;将喜欢的背景图放到project–&amp;gt;themes–&amp;gt;next–&amp;gt;source–&amp;gt;images目录下。&lt;/li&gt;
-&lt;li&gt;打开project–&amp;gt;themes–&amp;gt;next–&amp;gt;source–&amp;gt;css–&amp;gt;_custom–&amp;gt;custom.styl文件，加入代码
+&lt;li&gt;打开project–&amp;gt;themes–&amp;gt;next–&amp;gt;source–&amp;gt;css–&amp;gt;_custom–&amp;gt;custom.styl文件，加入代码&lt;br&gt;
 &lt;code&gt;body { background:url(/images/imagename.jpg);}&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;重新编译项目就OK了。&lt;/li&gt;
 &lt;/ol&gt;
