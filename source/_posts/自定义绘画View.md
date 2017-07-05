@@ -1,0 +1,1039 @@
+---
+title: 自定义绘画View
+tags:
+  - Android
+  - 自定义控件
+categories:
+  - 自定义控件
+date: 2017-07-05 20:39:04
+---
+买了个ipad pro，发现用proCreate画画挺有意思，于是决定用Andorid实现一个自定义View画板效果。
+
+### 运行效果
+
+<embed type="video/mp4" allowscriptaccess="false" allowfullscreen="false" wmode="transparent"  height="520px" width="300px" scale="showall" src="/video/drawsomething.swf"/>
+
+<!-- more -->
+
+### 先贴代码，再分析
+
+#### 继承View，绘制画板
+```java
+/**
+ * Created by lieeber on 2017/6/28.
+ * 自定义画板，可以更换画笔颜色，粗细，实现了前进，后退，保存到本地等功能。
+ */
+public class DrawSomethingView extends View {
+    private final Paint linePaint;
+    private final Paint paintPaint;
+    private final Path fillPath;
+    private final Paint eraserPaint;
+    private float downX;
+    private float downY;
+    private Path linePath;
+
+    private final int DRAW_LINE = 0;
+    private final int DRAW_FILL = 1;
+    private final int DRAW_PAINT = 2;
+    private final int DRAW_ERASER = 3;
+
+    private int drawStyle = 0;
+
+    private int lineColor = Color.BLACK;
+    private int paintColor = Color.BLUE;
+    private int lineWidth = 20;
+    private float paintWidthProgress = 50;
+    private float lineWidthProgress = 50;
+    private int paintWidth = 70;
+
+    private float eraserWidthProgress = 50;
+    private int eraserWidth = 100;
+
+    public float getEraserWidthProgress() {
+        return eraserWidthProgress;
+    }
+
+    public void setEraserWidthProgress(float eraserWidthProgress) {
+        this.eraserWidthProgress = eraserWidthProgress;
+    }
+
+    public int getEraserWidth() {
+        return eraserWidth;
+    }
+
+    public void setEraserWidth() {
+        eraserPaint.setStrokeWidth(eraserWidth * eraserWidthProgress / 100);
+    }
+
+    public float getPaintWidthProgress() {
+        return paintWidthProgress;
+    }
+
+    public void setPaintWidthProgress(float paintWidthProgress) {
+        this.paintWidthProgress = paintWidthProgress;
+    }
+
+    public float getLineWidthProgress() {
+        return lineWidthProgress;
+    }
+
+    public void setLineWidthProgress(float lineWidthProgress) {
+        this.lineWidthProgress = lineWidthProgress;
+    }
+
+    public int getLineColor() {
+        return lineColor;
+    }
+
+    public void setLineColor(int lineColor) {
+        this.lineColor = lineColor;
+        linePaint.setColor(lineColor);
+    }
+
+    public int getPaintColor() {
+        return paintColor;
+    }
+
+    public void setPaintColor(int paintColor) {
+        this.paintColor = paintColor;
+        paintPaint.setColor(paintColor);
+    }
+
+    public int getLineWidth() {
+        return lineWidth;
+    }
+
+    public void setLineWidth() {
+        linePaint.setStrokeWidth(lineWidth * lineWidthProgress / 100);
+    }
+
+    public int getPaintWidth() {
+        return paintWidth;
+    }
+
+    public void setPaintWidth() {
+        paintPaint.setStrokeWidth(paintWidth * paintWidthProgress / 100);
+    }
+
+    private ArrayList<PathBean> pathlist = new ArrayList<>();
+    private ArrayList<PathBean> deletePathList = new ArrayList<>();
+
+    private final Canvas mCanvas;
+    private Bitmap mBitmap;
+    private int viewWidth;
+    private int viewHeight;
+
+    public DrawSomethingView(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+        linePaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
+        linePaint.setStyle(Style.STROKE);
+        linePaint.setColor(lineColor);
+        linePaint.setStrokeWidth(lineWidth * lineWidthProgress / 100);
+        linePaint.setPathEffect(new CornerPathEffect(100f));
+        linePaint.setStrokeCap(Cap.ROUND);
+        linePaint.setStrokeJoin(Join.ROUND);
+
+        paintPaint = new Paint();
+        paintPaint.setStyle(Style.STROKE);
+        paintPaint.setColor(paintColor);
+        paintPaint.setStrokeWidth(paintWidth * paintWidthProgress / 100);
+        paintPaint.setStrokeCap(Cap.ROUND);
+        paintPaint.setPathEffect(new CornerPathEffect(100f));
+        paintPaint.setStrokeJoin(Join.ROUND);
+
+        eraserPaint = new Paint();
+        eraserPaint.setStyle(Style.STROKE);
+        eraserPaint.setAlpha(0);
+        eraserPaint.setXfermode(new PorterDuffXfermode(Mode.CLEAR));
+        eraserPaint.setColor(Color.TRANSPARENT);
+        eraserPaint.setStrokeWidth(eraserWidth * eraserWidthProgress / 100);
+        eraserPaint.setStrokeCap(Cap.ROUND);
+        eraserPaint.setPathEffect(new CornerPathEffect(100f));
+        eraserPaint.setStrokeJoin(Join.ROUND);
+
+        linePath = new Path();
+        fillPath = new Path();
+
+        mCanvas = new Canvas();
+    }
+
+
+    @Override protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        viewWidth = w;
+        viewHeight = h;
+        blankBitmap();
+    }
+
+    @Override public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                downX = event.getX();
+                downY = event.getY();
+                linePath = new Path();
+                linePath.moveTo(downX, downY);
+                break;
+            case MotionEvent.ACTION_MOVE:
+                downX = event.getX();
+                downY = event.getY();
+                switch (drawStyle) {
+                    case DRAW_LINE:
+                        linePath.lineTo(downX, downY);
+                        mCanvas.drawPath(linePath, linePaint);
+                        break;
+                    case DRAW_PAINT:
+                        linePath.lineTo(downX, downY);
+                        mCanvas.drawPath(linePath, paintPaint);
+                        break;
+                    case DRAW_ERASER:
+                        linePath.lineTo(downX, downY);
+                        mCanvas.drawPath(linePath, eraserPaint);
+                        break;
+                }
+                invalidate();
+                break;
+            case MotionEvent.ACTION_UP:
+                switch (drawStyle) {
+                    case DRAW_LINE:
+                        pathlist.add(new PathBean(linePath, linePaint, lineWidthProgress * lineWidth / 100, lineColor));
+                        break;
+                    case DRAW_PAINT:
+                        pathlist.add(new PathBean(linePath, paintPaint, paintWidthProgress * paintWidth / 100, paintColor));
+                        break;
+                    case DRAW_ERASER:
+                        pathlist.add(new PathBean(linePath, eraserPaint, eraserWidthProgress * eraserWidth / 100, Color.TRANSPARENT));
+                        break;
+                }
+                deletePathList.clear();
+
+                break;
+        }
+        return true;
+    }
+
+    @Override protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.drawBitmap(mBitmap, new Matrix(), null);
+    }
+
+    private void blankBitmap() {
+        mBitmap = Bitmap.createBitmap(viewWidth, viewHeight, Config.ARGB_8888);
+        mCanvas.setBitmap(mBitmap);
+//        mCanvas.drawColor(Color.WHITE);
+    }
+
+    public void clear() {
+        pathlist.clear();
+        deletePathList.clear();
+        blankBitmap();
+        invalidate();
+    }
+
+    public void reset() {
+        blankBitmap();
+        if (pathlist.size() > 0) {
+            PathBean pathBean = pathlist.get(pathlist.size() - 1);
+            pathlist.remove(pathBean);
+            deletePathList.add(pathBean);
+        }
+        for (int i = 0; i < pathlist.size(); i++) {
+            pathlist.get(i).paint.setStrokeWidth(pathlist.get(i).width);
+            pathlist.get(i).paint.setColor(pathlist.get(i).color);
+            mCanvas.drawPath(pathlist.get(i).path, pathlist.get(i).paint);
+        }
+        invalidate();
+    }
+
+    public void forward() {
+        if (deletePathList.size() > 0) {
+            PathBean pathBean = deletePathList.get(deletePathList.size() - 1);
+            pathBean.paint.setStrokeWidth(pathBean.width);
+            pathBean.paint.setColor(pathBean.color);
+            mCanvas.drawPath(pathBean.path, pathBean.paint);
+            deletePathList.remove(deletePathList.size() - 1);
+            pathlist.add(pathBean);
+        }
+        invalidate();
+    }
+
+    public void setDrawLine() {
+        drawStyle = DRAW_LINE;
+    }
+
+    public void setDrawPaint() {
+        drawStyle = DRAW_PAINT;
+    }
+
+    public void setEraser() {
+        drawStyle = DRAW_ERASER;
+    }
+
+    public int getlineColor() {
+        return lineColor;
+
+    }
+
+    public void save() {
+        if (ContextCompat.checkSelfPermission(getContext(),
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                == PackageManager.PERMISSION_GRANTED) {
+            //拥有读写文件权限
+            Log.i(TAG,"拥有读写文件权限");
+            //获得系统当前时间，并以该时间作为文件名
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
+            Date curDate = new Date(System.currentTimeMillis());//获取当前时间
+            String dir = Environment.getExternalStorageDirectory().getAbsolutePath();
+            String str = formatter.format(curDate) + "paint.png";
+            File file = new File(dir + "/"+str);
+            FileOutputStream fos = null;
+            try {
+                fos = new FileOutputStream(file);
+                Toast.makeText(getContext(), "保存成功", Toast.LENGTH_LONG).show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            mBitmap.compress(CompressFormat.PNG, 100, fos);
+            getContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
+            Toast.makeText(getContext(), "保存成功", Toast.LENGTH_LONG).show();
+        }else{
+            Log.i(TAG,"没有读写权限");
+
+            Toast.makeText(getContext(), "没有读写权限", Toast.LENGTH_LONG).show();
+            //没有读写权限
+            if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) getContext(),
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)){
+                ActivityCompat.requestPermissions((Activity) getContext(),
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        140);
+            }else{
+//                showPermissionDialog();
+            }
+        }
+    }
+}
+```
+#### 在Activity中添加逻辑操作
+
+```java
+public class MainActivity extends AppCompatActivity {
+    private DrawSomethingView myView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        myView = (DrawSomethingView) findViewById(R.id.myView);
+
+        findViewById(R.id.tvLine).setOnLongClickListener(new OnLongClickListener() {
+            @Override public boolean onLongClick(View v) {
+                SheetUtil sheetUtil = SheetUtil.getInstance();
+                int color = myView.getlineColor();
+                float progress = myView.getLineWidthProgress();
+                sheetUtil.addSheet(MainActivity.this, color, progress);
+                sheetUtil.showSheet();
+                sheetUtil.setSeekBarChangeListener(new SeekBarChangeListener() {
+                    @Override public void onProgress(float progress) {
+                        myView.setLineWidthProgress(progress);
+                        myView.setLineWidth();
+                    }
+
+                    @Override public void onColorChange(int color) {
+                        myView.setLineColor(color);
+                    }
+                });
+                return false;
+            }
+        });
+
+        findViewById(R.id.tvPaint).setOnLongClickListener(new OnLongClickListener() {
+            @Override public boolean onLongClick(View v) {
+                SheetUtil sheetUtil = SheetUtil.getInstance();
+                int color = myView.getPaintColor();
+                float progress = myView.getPaintWidthProgress();
+                sheetUtil.addSheet(MainActivity.this, color, progress);
+                sheetUtil.showSheet();
+                sheetUtil.setSeekBarChangeListener(new SeekBarChangeListener() {
+                    @Override public void onProgress(float progress) {
+                        myView.setPaintWidthProgress(progress);
+                        myView.setPaintWidth();
+                    }
+
+                    @Override public void onColorChange(int color) {
+                        myView.setPaintColor(color);
+                    }
+                });
+                return false;
+            }
+        });
+        findViewById(R.id.tvEraser).setOnLongClickListener(new OnLongClickListener() {
+            @Override public boolean onLongClick(View v) {
+                float progress = myView.getEraserWidthProgress();
+                SheetUtil sheetUtil = SheetUtil.getInstance();
+                sheetUtil.addSheet(MainActivity.this,-1, progress);
+                sheetUtil.showSheet();
+                sheetUtil.setSeekBarChangeListener(new SeekBarChangeListener() {
+                    @Override public void onProgress(float progress) {
+                        myView.setEraserWidthProgress(progress);
+                        myView.setEraserWidth();
+                    }
+
+                    @Override public void onColorChange(int color) {
+                    }
+                });
+                return false;
+            }
+        });
+        findViewById(R.id.tvLine).setSelected(true);
+    }
+
+    public void clear(View view) {
+        myView.clear();
+    }
+
+    public void reset(View view) {
+        myView.reset();
+    }
+
+    public void forward(View view) {
+        myView.forward();
+    }
+
+    public void drawLine(View view) {
+        clearSelect();
+        findViewById(R.id.tvLine).setSelected(true);
+        myView.setDrawLine();
+    }
+
+    public void drawPaint(View view) {
+        clearSelect();
+        findViewById(R.id.tvPaint).setSelected(true);
+        myView.setDrawPaint();
+    }
+
+    public void eraser(View view) {
+        clearSelect();
+        findViewById(R.id.tvEraser).setSelected(true);
+        myView.setEraser();
+    }
+    public  void clearSelect() {
+        findViewById(R.id.tvEraser).setSelected(false);
+        findViewById(R.id.tvLine).setSelected(false);
+        findViewById(R.id.tvPaint).setSelected(false);
+    }
+
+    public void save(View view) {
+        myView.save();
+    }
+}
+```
+
+#### Activity对应布局文件
+```xml
+activity_main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:src="@drawable/timg"-->
+    <!--android:scaleType="fitXY"-->
+
+    <!--android:layout_height="match_parent"/>-->
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvClear"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/tv_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="clear"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="清除"/>
+
+        <TextView
+            android:id="@+id/tvReset"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/tv_bg_2"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="reset"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="撤销"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/tv_bg_3"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="forward"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="前进"/>
+
+        <TextView
+            android:id="@+id/tvLine"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/tv_bg_4"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="drawLine"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="线条"/>
+        <TextView
+            android:id="@+id/tvPaint"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/tv_bg_4"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="drawPaint"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="画笔"/>
+
+        <TextView
+            android:id="@+id/tvEraser"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/tv_bg_4"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="eraser"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="橡皮擦"/>
+
+
+        <TextView
+            android:id="@+id/tvSave"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/tv_bg_2"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="save"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="保存"/>
+    </LinearLayout>
+
+    <studentsdemo.lieeber.com.lbview.views.DrawSomethingView
+        android:id="@+id/myView"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll"/>
+</RelativeLayout>
+```
+#### 相关资源文件
+```xml
+tv_bg.xml
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/colorPrimary" android:state_pressed="true"/>
+    <item android:drawable="@color/colorAccent"/>
+</selector>
+
+tv_bg2.xml
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/colorPrimary" android:state_pressed="true"/>
+    <item android:drawable="@color/color1"/>
+</selector>
+
+tv_bg3.xml
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/colorPrimary" android:state_pressed="true"/>
+    <item android:drawable="@color/color2"/>
+</selector>
+
+tv_bg4.xml
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item  android:state_selected="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="3dp"/>
+            <stroke android:color="@color/colorAccent"/>
+            <stroke android:width="1dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="6dp"/>
+            <stroke android:color="#ffffffff"/>
+            <stroke android:width="3dp"/>
+        </shape>
+    </item>
+</selector>
+```
+#### 自定义弹框
+```java
+public class SheetUtil {
+    private ViewGroup contentView;
+    private View sheetContent;
+    private static SheetUtil sheetUtil = new SheetUtil();
+    private Activity activity;
+    private View llSheet;
+    private View viewSheetBg;
+    private ColorPickerView colorPickerView;
+    private View colorView;
+    private SeekBar seekBar;
+    private TextView tvProgress;
+
+    public static SheetUtil getInstance() {
+        return sheetUtil;
+    }
+
+    public void addSheet(Activity activity, int originColor, float originProgress) {
+        this.activity = activity;
+        contentView = (ViewGroup) activity.findViewById(android.R.id.content);
+        sheetContent = LayoutInflater.from(activity).inflate(R.layout.setting_dialog, contentView, false);
+        sheetContent.setVisibility(View.GONE);
+        if (contentView.findViewById(R.id.view_sheet_bg) == null) {
+            contentView.addView(sheetContent);
+        }
+
+        viewSheetBg = sheetContent.findViewById(R.id.view_sheet_bg);
+        llSheet = sheetContent.findViewById(R.id.ll_sheet);
+        colorPickerView = (ColorPickerView) sheetContent.findViewById(R.id.color_picker);
+        colorView = sheetContent.findViewById(R.id.colorView);
+        seekBar = (SeekBar) sheetContent.findViewById(R.id.seek_bar);
+        tvProgress = (TextView) sheetContent.findViewById(R.id.tv_progress);
+
+
+        if (originColor == -1) {
+            sheetContent.findViewById(R.id.rl_color_picker).setVisibility(View.GONE);
+        }
+        seekBar.setProgress((int) originProgress);
+        tvProgress.setText((int) originProgress + "%");
+        colorView.setBackgroundColor(originColor);
+        colorPickerView.setOnSeekColorListener(new OnSeekColorListener() {
+            @Override public void onSeekColorListener(int color) {
+                colorView.setBackgroundColor(color);
+                if (seekBarChangeListener != null) {
+                    seekBarChangeListener.onColorChange(color);
+                }
+            }
+        });
+
+        viewSheetBg.setOnClickListener(new OnClickListener() {
+            @Override public void onClick(View v) {
+                disMissSheet();
+            }
+        });
+
+        seekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+            @Override public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                System.out.println(progress);
+                if (seekBarChangeListener != null) {
+                    seekBarChangeListener.onProgress(progress);
+                }
+                tvProgress.setText(progress + "%");
+
+            }
+
+            @Override public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+    }
+
+
+    public void showSheet() {
+        sheetContent.setVisibility(View.VISIBLE);
+        sheetContent.bringToFront();
+
+        llSheet.setTranslationY(activity.getResources().getDisplayMetrics().heightPixels);
+        ValueAnimator alphaAnimator = ValueAnimator.ofFloat(0, 1);
+        alphaAnimator.setInterpolator(new DecelerateInterpolator());
+        alphaAnimator.setDuration(300);
+        alphaAnimator.addUpdateListener(new AnimatorUpdateListener() {
+            @Override public void onAnimationUpdate(ValueAnimator animation) {
+                float alpha = (float) animation.getAnimatedValue();
+                viewSheetBg.setAlpha(alpha);
+            }
+        });
+        alphaAnimator.start();
+        ValueAnimator translationAniamtor = ValueAnimator.ofFloat(activity.getResources().getDisplayMetrics().heightPixels, 0);
+        translationAniamtor.setInterpolator(new DecelerateInterpolator());
+        translationAniamtor.setDuration(300);
+        translationAniamtor.addUpdateListener(new AnimatorUpdateListener() {
+            @Override public void onAnimationUpdate(ValueAnimator animation) {
+                float translationY = (float) animation.getAnimatedValue();
+                llSheet.setTranslationY(translationY);
+            }
+        });
+        translationAniamtor.start();
+
+    }
+
+    public void disMissSheet() {
+        if (viewSheetBg != null && llSheet != null) {
+            disMissSheet(viewSheetBg, llSheet);
+        }
+    }
+
+    private void disMissSheet(final View viewSheetBg, final View llSheet) {
+        ValueAnimator alphaAnimator = ValueAnimator.ofFloat(1, 0);
+        alphaAnimator.setInterpolator(new DecelerateInterpolator());
+        alphaAnimator.setDuration(300);
+        alphaAnimator.addUpdateListener(new AnimatorUpdateListener() {
+            @Override public void onAnimationUpdate(ValueAnimator animation) {
+                float alpha = (float) animation.getAnimatedValue();
+                viewSheetBg.setAlpha(alpha);
+            }
+        });
+        alphaAnimator.start();
+
+        ValueAnimator translationAniamtor = ValueAnimator.ofFloat(0, activity.getResources().getDisplayMetrics().heightPixels);
+        translationAniamtor.setInterpolator(new DecelerateInterpolator());
+        translationAniamtor.setDuration(300);
+        translationAniamtor.addUpdateListener(new AnimatorUpdateListener() {
+            @Override public void onAnimationUpdate(ValueAnimator animation) {
+                float translationY = (float) animation.getAnimatedValue();
+                llSheet.setTranslationY(translationY);
+            }
+        });
+        translationAniamtor.start();
+        translationAniamtor.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                contentView.removeView(sheetContent);
+            }
+        });
+    }
+
+    public boolean isShowingSheet() {
+        if (contentView == null) {
+            return false;
+        }
+        if (contentView.findViewById(R.id.view_sheet_bg) == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
+    public interface SeekBarChangeListener {
+        void onProgress(float progress);
+
+        void onColorChange(int color);
+    }
+
+    private SeekBarChangeListener seekBarChangeListener;
+
+    public void setSeekBarChangeListener(SeekBarChangeListener seekBarChangeListener) {
+        this.seekBarChangeListener = seekBarChangeListener;
+    }
+}
+```
+
+#### 自定义弹框对应布局
+```xml
+setting_dialog.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/view_sheet_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#88000000"/>
+
+    <LinearLayout
+        android:id="@+id/ll_sheet"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#ffffff"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="粗细"/>
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="50%"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_color_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <studentsdemo.lieeber.com.lbview.views.ColorPickerView
+                android:id="@+id/color_picker"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentLeft="true"/>
+
+            <View
+                android:id="@+id/colorView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40dp"
+                android:layout_toRightOf="@+id/color_picker"
+                android:background="#ff0000"/>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>
+```
+
+#### 自定义画笔颜色更改器
+```java
+/**
+ * Created by lieeber on 2017/6/28.
+ */
+public class ColorPickerView extends View {
+    private Context context;
+    /**
+     * Currently selected color
+     */
+    private float[] colorHSV = new float[]{0f, 1f, 1f};
+
+    private Paint colorWheelPaint;
+
+    private Paint touchCirclePaint;
+
+    private int radius;
+
+    private int centerX;
+
+    private int centerY;
+
+    private int touchCircleX;
+
+    private int touchCircleY;
+
+    private OnSeekColorListener onSeekColorListener;
+
+    public ColorPickerView(Context context) {
+        this(context, null);
+    }
+
+    public ColorPickerView(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public ColorPickerView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(context);
+    }
+
+    private void init(Context context) {
+        setLayerType(LAYER_TYPE_SOFTWARE, null);
+        this.context = context;
+        colorWheelPaint = new Paint();
+        colorWheelPaint.setAntiAlias(true);
+
+        touchCirclePaint = new Paint();
+        touchCirclePaint.setStyle(Paint.Style.STROKE);
+        touchCirclePaint.setColor(Color.WHITE);
+        touchCirclePaint.setAntiAlias(true);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+        int widthSpecMode = MeasureSpec.getMode(widthMeasureSpec);
+        int heightSpecMode = MeasureSpec.getMode(heightMeasureSpec);
+
+        int widthSpecSize = MeasureSpec.getSize(widthMeasureSpec);
+        int heightSpecSize = MeasureSpec.getSize(heightMeasureSpec);
+
+        //处理 wrap_content问题
+        int defaultDimension = dip2px(200);
+
+        if (widthSpecMode == MeasureSpec.AT_MOST && heightSpecMode == MeasureSpec.AT_MOST) {
+            setMeasuredDimension(defaultDimension, defaultDimension);
+        } else if (widthSpecMode == MeasureSpec.AT_MOST) {
+            setMeasuredDimension(defaultDimension, heightSpecSize);
+        } else if (heightSpecMode == MeasureSpec.AT_MOST) {
+            setMeasuredDimension(widthSpecSize, defaultDimension);
+        }
+    }
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        centerX = w / 2;
+        centerY = h / 2;
+        radius = Math.min(centerX, centerY);
+        createColorWheel();
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.drawCircle(centerX, centerY, radius, colorWheelPaint);
+        canvas.drawCircle(touchCircleX, touchCircleY, 10, touchCirclePaint);
+    }
+
+    /**
+     * create color wheel
+     */
+    private void createColorWheel() {
+        int colorCount = 30;
+        float colorAngleStep = 360 / 30.0f;
+        int colors[] = new int[colorCount];
+        float hsv[] = new float[]{0f, 1f, 1f};
+        for (int i = 0; i < colors.length; i++) {
+            hsv[0] = (i * colorAngleStep + 180) % 360;
+            colors[i] = Color.HSVToColor(hsv);
+        }
+        SweepGradient sweepGradient = new SweepGradient(centerX, centerY, colors, null);
+        RadialGradient radialGradient = new RadialGradient(centerX, centerY,
+                radius, 0xFFFFFFFF, 0x00FFFFFF, Shader.TileMode.CLAMP);
+        ComposeShader composeShader = new ComposeShader(sweepGradient, radialGradient, PorterDuff.Mode.SRC_OVER);
+        colorWheelPaint.setShader(composeShader);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        ViewParent parent = getParent();
+        if (parent != null)
+            parent.requestDisallowInterceptTouchEvent(true);
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_MOVE:
+                int x = (int) event.getX();
+                int y = (int) event.getY();
+                int cx = x - centerX;
+                int cy = y - centerY;
+                double d = Math.sqrt(cx * cx + cy * cy);
+
+                if (d <= radius) {
+                    colorHSV[0] = (float) (Math.toDegrees(Math.atan2(cy, cx)) + 180f);
+                    colorHSV[1] = Math.max(0f, Math.min(1f, (float) (d / radius)));
+                    if (onSeekColorListener != null) {
+                        touchCircleY = y;
+                        touchCircleX = x;
+                        onSeekColorListener.onSeekColorListener(getColor());
+                        postInvalidate();
+                    }
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+                break;
+        }
+        return true;
+    }
+
+    public void setOnSeekColorListener(OnSeekColorListener listener) {
+        this.onSeekColorListener = listener;
+    }
+
+    /**
+     * @param color 0~360
+     */
+    public void setHSVColor(int color) {
+        colorHSV[0] = color;
+        colorWheelPaint.setColor(Color.HSVToColor(colorHSV));
+        postInvalidate();
+    }
+    /**
+     * @param value 0~1.0
+     */
+    public void setHSVValue(float value) {
+        colorHSV[2] = value;
+        colorWheelPaint.setColor(Color.HSVToColor(colorHSV));
+        postInvalidate();
+    }
+
+    /**
+     * @param saturation 0~1.0
+     */
+    public void setHSVSaturation(float saturation) {
+        colorHSV[1] = saturation;
+        colorWheelPaint.setColor(Color.HSVToColor(colorHSV));
+        postInvalidate();
+    }
+
+    public void setColor(int color) {
+        Color.colorToHSV(color, colorHSV);
+    }
+
+    public int getColor() {
+        return Color.HSVToColor(colorHSV);
+    }
+
+
+    @Override
+    protected Parcelable onSaveInstanceState() {
+        Bundle state = new Bundle();
+        state.putFloatArray("color", colorHSV);
+        state.putParcelable("super", super.onSaveInstanceState());
+        return state;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        if (state instanceof Bundle) {
+            Bundle bundle = (Bundle) state;
+            colorHSV = bundle.getFloatArray("color");
+            super.onRestoreInstanceState(bundle.getParcelable("super"));
+        } else {
+            super.onRestoreInstanceState(state);
+        }
+    }
+
+    public int dip2px(float dpValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
+    }
+    public interface OnSeekColorListener {
+        void onSeekColorListener(int color);
+    }
+}
+```
+
