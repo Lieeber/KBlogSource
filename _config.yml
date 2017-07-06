@@ -72,7 +72,15 @@ deploy:
   repo: https://github.com/Lieeber/Lieeber.github.io.git
   branch: master
 
+#添加百度/谷歌/本地 自定义站点内容搜索
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
+
+#给markdown语法添加脚注功能
 markdown:
   render:
     html: true

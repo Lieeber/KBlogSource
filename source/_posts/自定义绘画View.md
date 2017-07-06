@@ -9,11 +9,12 @@ date: 2017-07-05 20:39:04
 ---
 买了个ipad pro，发现用proCreate画画挺有意思，于是决定用Andorid实现一个自定义View画板效果。
 
+<!-- more -->
+
 ### 运行效果
 
-<embed type="video/mp4" allowscriptaccess="false" allowfullscreen="false" wmode="transparent"  height="520px" width="300px" scale="showall" src="/video/drawsomething.swf"/>
+<img  height="400" align=center src="/video/drawsomething.gif"/>
 
-<!-- more -->
 
 ### 先贴代码，再分析
 
