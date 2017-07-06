@@ -1,11 +1,12 @@
 ---
-title: Markdown语法的使用
+title: Markdown的使用
 tags:
   - Markdown
 categories:
   - 博客
 date: 2017-01-22 12:39:04
 ---
+
 MarkDown语法比较简单，能够很轻松的学会，但如果搭配html的语法使用，能够实现更多复杂的效果。
 
 ### 标题
