@@ -36,7 +36,7 @@ MarkDown语法比较简单，能够很轻松的学会，但如果搭配html的�
 
 ### 添加图片
 
-<img width="150" height="150" align=center src="http://www.lieeber.com/images/lieeber.jpg"/>
+<img width="150" height="150" align=center src="http://osphuquui.bkt.clouddn.com/lieeber.jpg"/>
 
 语法：
 1. `![图片](https://mgpath/xxx.jpg)`
