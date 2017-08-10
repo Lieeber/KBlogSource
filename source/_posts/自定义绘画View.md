@@ -13,7 +13,7 @@ date: 2017-07-05 20:39:04
 
 ### 运行效果
 
-<img  height="400" align=center src="http://osphuquui.bkt.clouddn.com/drawsomething.gif"/>
+<img  height="400" align="center" src="http://osphuquui.bkt.clouddn.com/drawsomething.gif"/>
 
 
 ### 先贴代码，再分析
