@@ -54,23 +54,25 @@ class Handler(BaseHandler):
         else:
             return dir_path
 
-    def saveImg(self, content, path):
-        f = open(path, 'wb')
-        f.write(content)
-        f.close()
 
+    def saveImg(self, content, path):
+        with open(path,'wb') as f:
+            f.write(content)
+
+            
     def __init__(self):
         self.page = 1
-        self.total_page = 30
+        self.total_page = 150
         self.base_url = "/Users/lieeber/Downloads/meizitu2/"
-        self.title = ""
 
+        
     @every(minutes=24 * 60)
     def on_start(self):
         while self.page <= self.total_page:
             self.crawl('http://www.mzitu.com/page/' + str(self.page), callback=self.index_page)
             self.page += 1
 
+            
     @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
         aa = response.doc('div[class=postlist]')('ul[id=pins]')('li')('span')('a[target=_blank]')
@@ -80,26 +82,29 @@ class Handler(BaseHandler):
 
     @config(priority=2)
     def index_page_each_page(self, response):
-        self.title = response.doc('title').text()
-        print(self.title)
+        title = response.doc('title').text()
+        print(title)
         big_page = response.doc('span[class=dots]').next('a span').text()
         for item in range(1, int(big_page) + 1):
             print(response.url + "/" + str(item))
-            self.crawl(response.url + "/" + str(item), callback=self.detail_page)
+            self.crawl(response.url + "/" + str(item), callback=self.detail_page,save={'title': title})
 
     @config(priority=2)
     def detail_page(self, response):
         image_url = response.doc('div[class=main-image]')('img').attr('src')
         print(image_url)
-        self.crawl(image_url, headers={'referer': 'http://www.mzitu.com/'}, callback=self.get_image_content)
+        title = response.save['title']
+        print(title)
+        self.crawl(image_url, headers={'referer': 'http://www.mzitu.com/'}, callback=self.get_image_content,save={'title': title})
 
     @config(priority=2)
     def get_image_content(self, response):
         image_name = response.url.split('/')[-1]
         print(image_name)
-        dir_path = self.mkDir(self.base_url + self.title)
-        print(dir_path)
-        self.saveImg(response.content, dir_path + "/" + image_name)
+        unicode_path = (self.base_url + response.save['title']).replace(' ','')
+        self.mkDir(unicode_path)
+        print( unicode_path + "/" + image_name)
+        self.saveImg(response.content, unicode_path + "/" + image_name)
 ```
 
 代码写完后，就可以进入dashboard页面，更改status为running或者debug状态，点击action中的run按钮即可开启爬虫任务了。
