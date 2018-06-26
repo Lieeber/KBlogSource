@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1721e131-c0ce-4d15-be48-028aaa85b4db" name="Default" comment="后缀表达式实现四则运算">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/Java虚拟机--自动内存管理机制.md" />
+    <list default="true" id="1721e131-c0ce-4d15-be48-028aaa85b4db" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/Java虚拟机--垃圾收集器与内存分配策略.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.deploy_git" afterPath="$PROJECT_DIR$/.deploy_git" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/_posts/Java虚拟机--自动内存管理机制.md" afterPath="$PROJECT_DIR$/source/_posts/Java虚拟机--自动内存管理机制.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,16 +19,6 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="爬取盗墓笔记生成json.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/爬取盗墓笔记生成json.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="自定义绘画View.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/自定义绘画View.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -56,11 +47,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Java虚拟机--自动内存管理机制.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Java虚拟机--自动内存管理机制.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/Java虚拟机--自动内存管理机制.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+            <state relative-caret-position="128">
+              <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Java虚拟机--垃圾收集器与内存分配策略.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Java虚拟机--垃圾收集器与内存分配策略.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -204,6 +205,7 @@
         <option value="$PROJECT_DIR$/themes/Demo.java" />
         <option value="$PROJECT_DIR$/source/_posts/博客搭建完成，记录一下步骤.md" />
         <option value="$PROJECT_DIR$/source/_posts/Java虚拟机--自动内存管理机制.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Java虚拟机--垃圾收集器与内存分配策略.md" />
       </list>
     </option>
   </component>
@@ -738,7 +740,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502955506778</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Java虚拟机  自动内存管理机制。">
+      <created>1529981895112</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1529981895112</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -808,7 +817,8 @@
     <MESSAGE value="爬取盗墓笔记生成json" />
     <MESSAGE value="Scrapy爬取顶点小说" />
     <MESSAGE value="后缀表达式实现四则运算" />
-    <option name="LAST_COMMIT_MESSAGE" value="后缀表达式实现四则运算" />
+    <MESSAGE value="Java虚拟机  自动内存管理机制。" />
+    <option name="LAST_COMMIT_MESSAGE" value="Java虚拟机  自动内存管理机制。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -819,13 +829,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/languages/zh-Hans.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1072,8 +1075,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/Java虚拟机--自动内存管理机制.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+        <state relative-caret-position="128">
+          <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Java虚拟机--垃圾收集器与内存分配策略.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
           <folding />
         </state>
       </provider>
