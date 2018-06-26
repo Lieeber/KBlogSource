@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1721e131-c0ce-4d15-be48-028aaa85b4db" name="Default" comment="用Java实现各种排序">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/计算机网络-数据链路层.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/计算机网络-物理层.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/计算机网络-计算机网络概述.md" />
+    <list default="true" id="1721e131-c0ce-4d15-be48-028aaa85b4db" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/自定义控件-Canvas对绘制的辅助.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/自定义控件-属性动画.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/自定义控件-文字的绘制.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/自定义控件-自定义View绘制顺序.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/自定义控件-自定义绘制.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.deploy_git" afterPath="$PROJECT_DIR$/.deploy_git" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/_posts/Hexo使用上的一些小tips.md" afterPath="$PROJECT_DIR$/source/_posts/Hexo使用上的一些小tips.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/_posts/Markdown的使用.md" afterPath="$PROJECT_DIR$/source/_posts/Markdown的使用.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/_posts/PySpider爬取mzitu图片.md" afterPath="$PROJECT_DIR$/source/_posts/PySpider爬取mzitu图片.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/_posts/PySpider爬取糗事百科文章和图片.md" afterPath="$PROJECT_DIR$/source/_posts/PySpider爬取糗事百科文章和图片.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/_posts/Scrapy爬取顶点小说.md" afterPath="$PROJECT_DIR$/source/_posts/Scrapy爬取顶点小说.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/_posts/爬取盗墓笔记生成json.md" afterPath="$PROJECT_DIR$/source/_posts/爬取盗墓笔记生成json.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/_posts/自定义绘画View.md" afterPath="$PROJECT_DIR$/source/_posts/自定义绘画View.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,61 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="博客搭建完成，记录一下步骤.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/博客搭建完成，记录一下步骤.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="自定义绘画View.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/自定义绘画View.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PySpider爬取糗事百科文章和图片.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/PySpider爬取糗事百科文章和图片.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Scrapy爬取顶点小说.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/Scrapy爬取顶点小说.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="128">
               <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="后缀表达式算术表达式.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/后缀表达式算术表达式.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="数据结构-排序.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/数据结构-排序.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -114,11 +60,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="计算机网络-数据链路层.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="计算机网络-数据链路层.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/计算机网络-数据链路层.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+            <state relative-caret-position="171">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="自定义控件-自定义绘制.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/自定义控件-自定义绘制.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="自定义控件-Canvas对绘制的辅助.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/自定义控件-Canvas对绘制的辅助.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="自定义控件-文字的绘制.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/自定义控件-文字的绘制.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="3" lean-forward="true" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="自定义控件-自定义View绘制顺序.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/自定义控件-自定义View绘制顺序.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="11" column="70" lean-forward="true" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="自定义控件-属性动画.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/自定义控件-属性动画.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -135,7 +131,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$ hexo new &quot;My New Post&quot;</find>
       <find>menu_icons</find>
       <find>display</find>
       <find>avatar</find>
@@ -165,6 +160,7 @@
       <find>lieeber.j</find>
       <find>save</find>
       <find>&lt;!-- more --&gt;</find>
+      <find>setPath</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -178,11 +174,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/source/_posts/2014-11-12-SpannableString的使用.md" />
-        <option value="$PROJECT_DIR$/source/_posts/hello-world.md" />
-        <option value="$PROJECT_DIR$/source/tags/标签.md" />
-        <option value="$PROJECT_DIR$/public/images/algolia_logo.svg" />
-        <option value="$PROJECT_DIR$/public/404.html" />
         <option value="$PROJECT_DIR$/source/_posts/index.md" />
         <option value="$PROJECT_DIR$/themes/next/source/css/_custom/custom.styl" />
         <option value="$PROJECT_DIR$/source/categories/index.md" />
@@ -229,6 +220,11 @@
         <option value="$PROJECT_DIR$/source/_posts/计算机网络-计算机网络概述.md" />
         <option value="$PROJECT_DIR$/source/_posts/计算机网络-物理层.md" />
         <option value="$PROJECT_DIR$/source/_posts/计算机网络-数据链路层.md" />
+        <option value="$PROJECT_DIR$/source/_posts/自定义控件-自定义绘制.md" />
+        <option value="$PROJECT_DIR$/source/_posts/自定义控件-Canvas对绘制的辅助.md" />
+        <option value="$PROJECT_DIR$/source/_posts/自定义控件-文字的绘制.md" />
+        <option value="$PROJECT_DIR$/source/_posts/自定义控件-自定义View绘制顺序.md" />
+        <option value="$PROJECT_DIR$/source/_posts/自定义控件-属性动画.md" />
       </list>
     </option>
   </component>
@@ -805,7 +801,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529996710494</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="计算机网络相关。">
+      <created>1529998076820</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1529998076820</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -820,7 +823,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35825545" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35825545" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -881,7 +884,8 @@
     <MESSAGE value="处理机调度和死锁。" />
     <MESSAGE value="数据结构相关。" />
     <MESSAGE value="用Java实现各种排序" />
-    <option name="LAST_COMMIT_MESSAGE" value="用Java实现各种排序" />
+    <MESSAGE value="计算机网络相关。" />
+    <option name="LAST_COMMIT_MESSAGE" value="计算机网络相关。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -892,29 +896,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/Hexo使用上的一些小tips.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/next/source/css/_custom/custom.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/2017/07/05/自定义绘画View/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7599">
-          <caret line="447" column="0" lean-forward="false" selection-start-line="447" selection-start-column="0" selection-end-line="447" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/2017/07/06/反倒蓝分开/index.html" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/反倒蓝分开.md" />
     <entry file="file://$PROJECT_DIR$/themes/next/source/css/_variables/custom.styl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1169,14 +1150,14 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/后缀表达式算术表达式.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/数据结构-排序.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="224">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
@@ -1232,8 +1213,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/计算机网络-数据链路层.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        <state relative-caret-position="171">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/自定义控件-自定义绘制.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/自定义控件-Canvas对绘制的辅助.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/自定义控件-文字的绘制.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="3" lean-forward="true" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/自定义控件-自定义View绘制顺序.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="70" lean-forward="true" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/自定义控件-属性动画.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
           <folding />
         </state>
       </provider>
