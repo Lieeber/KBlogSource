@@ -5,7 +5,7 @@ tags:
   - 自定义控件
 categories:
   - 自定义控件
-date: 2017-07-05 20:39:04
+date: 2017-02-05 20:39:04
 ---
 买了个ipad pro，发现用proCreate画画挺有意思，于是决定用Andorid实现一个自定义View画板效果。
 
