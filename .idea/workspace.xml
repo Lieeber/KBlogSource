@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1721e131-c0ce-4d15-be48-028aaa85b4db" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/数据结构-串.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/数据结构-排序.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/数据结构-数据结构绪论.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/数据结构-查找.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/数据结构-栈与队列.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/数据结构-树.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/数据结构-线性表.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/数据结构-用Java实现各种排序.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.deploy_git" afterPath="$PROJECT_DIR$/.deploy_git" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/_posts/后缀表达式算术表达式.md" afterPath="$PROJECT_DIR$/source/_posts/后缀表达式算术表达式.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/_posts/计算机操作系统-进程通信.md" afterPath="$PROJECT_DIR$/source/_posts/计算机操作系统-进程通信.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,16 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-37">
-              <caret line="69" column="7" lean-forward="false" selection-start-line="69" selection-start-column="7" selection-end-line="69" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="计算机操作系统-进程通信.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/计算机操作系统-进程通信.md">
           <provider selected="true" editor-type-id="text-editor">
@@ -87,7 +69,7 @@
       <file leaf-file-name="数据结构-树.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/数据结构-树.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="272">
               <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="13" />
               <folding />
             </state>
@@ -97,7 +79,7 @@
       <file leaf-file-name="数据结构-查找.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/数据结构-查找.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
+            <state relative-caret-position="192">
               <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="13" />
               <folding />
             </state>
@@ -107,8 +89,18 @@
       <file leaf-file-name="数据结构-排序.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/_posts/数据结构-排序.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+            <state relative-caret-position="416">
+              <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="数据结构-用Java实现各种排序.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/数据结构-用Java实现各种排序.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -226,6 +218,8 @@
         <option value="$PROJECT_DIR$/source/_posts/数据结构-树.md" />
         <option value="$PROJECT_DIR$/source/_posts/数据结构-查找.md" />
         <option value="$PROJECT_DIR$/source/_posts/数据结构-排序.md" />
+        <option value="$PROJECT_DIR$/source/_posts/数据结构-快速排序的实现.md" />
+        <option value="$PROJECT_DIR$/source/_posts/数据结构-用Java实现各种排序.md" />
       </list>
     </option>
   </component>
@@ -788,7 +782,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529992013522</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="数据结构相关。">
+      <created>1529995632926</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1529995632926</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -862,7 +863,8 @@
     <MESSAGE value="Java虚拟机  垃圾收集器与内存分配策略" />
     <MESSAGE value="进程的基本概念和进程控制。" />
     <MESSAGE value="处理机调度和死锁。" />
-    <option name="LAST_COMMIT_MESSAGE" value="处理机调度和死锁。" />
+    <MESSAGE value="数据结构相关。" />
+    <option name="LAST_COMMIT_MESSAGE" value="数据结构相关。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -873,12 +875,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/favicon.ico">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/2014-11-12-SpannableString的使用.md" />
     <entry file="file://$PROJECT_DIR$/source/_posts/index.md" />
     <entry file="file://$PROJECT_DIR$/source/tags/index.md" />
     <entry file="file://$PROJECT_DIR$/source/categories/index.md" />
@@ -1151,7 +1147,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/数据结构-树.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
+        <state relative-caret-position="272">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="13" />
           <folding />
         </state>
@@ -1159,16 +1155,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/数据结构-查找.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
+        <state relative-caret-position="192">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/数据结构-快速排序的实现.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/数据结构-用Java实现各种排序.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/数据结构-排序.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="416">
+          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
           <folding />
         </state>
       </provider>
