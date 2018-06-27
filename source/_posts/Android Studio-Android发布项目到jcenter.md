@@ -1,5 +1,5 @@
 ---
-title: Android发布项目到jCenter
+title: Android发布开源库到jCenter
 tags:
   - Android studio
   - jCenter
