@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1721e131-c0ce-4d15-be48-028aaa85b4db" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/java基础/Builder设计模式.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/java基础/单例模式的几种写法.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/java基础/adapter设计模式.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -86,12 +85,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Builder设计模式.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Builder设计模式.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/java基础/Builder设计模式.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="229">
-                <caret line="20" column="76" lean-forward="false" selection-start-line="20" selection-start-column="76" selection-end-line="20" selection-end-column="76" />
+              <first_editor relative-caret-position="320">
+                <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adapter设计模式.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/java基础/adapter设计模式.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="297">
+                <caret line="90" column="10" lean-forward="true" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -117,16 +129,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3952">
-              <caret line="247" column="33" lean-forward="false" selection-start-line="247" selection-start-column="33" selection-end-line="247" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -162,7 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/themes/Demo.java" />
         <option value="$PROJECT_DIR$/source/_posts/Java虚拟机--自动内存管理机制.md" />
         <option value="$PROJECT_DIR$/source/_posts/Java虚拟机--垃圾收集器与内存分配策略.md" />
         <option value="$PROJECT_DIR$/source/_posts/计算机操作系统-进程的基本概念.md" />
@@ -213,6 +214,7 @@
         <option value="$PROJECT_DIR$/source/_posts/第三方框架/LeakCanary的使用及原理.md" />
         <option value="$PROJECT_DIR$/source/_posts/java基础/单例模式的几种写法.md" />
         <option value="$PROJECT_DIR$/source/_posts/Builder设计模式.md" />
+        <option value="$PROJECT_DIR$/source/_posts/java基础/adapter设计模式.md" />
       </list>
     </option>
   </component>
@@ -300,11 +302,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/_posts/java基础" />
       <recent name="$PROJECT_DIR$/source/_posts" />
       <recent name="$PROJECT_DIR$/source/_posts/第三方框架" />
       <recent name="$PROJECT_DIR$/themes/next/source/path" />
       <recent name="$PROJECT_DIR$/themes/next/source/images" />
-      <recent name="D:\document\Blog\source\_posts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/source/_posts/java基础" />
@@ -374,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1534302476343</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="单例模式和适配器模式。">
+      <created>1534312652447</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1534312652447</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -437,7 +446,8 @@
     <MESSAGE value="修改配置。" />
     <MESSAGE value="。" />
     <MESSAGE value="LeakCanary的使用及原理。" />
-    <option name="LAST_COMMIT_MESSAGE" value="LeakCanary的使用及原理。" />
+    <MESSAGE value="单例模式和适配器模式。" />
+    <option name="LAST_COMMIT_MESSAGE" value="单例模式和适配器模式。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -448,7 +458,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/数据结构-快速排序的实现.md" />
     <entry file="file://$PROJECT_DIR$/source/_posts/Markdown的使用.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -845,8 +854,19 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/java基础/Builder设计模式.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="229">
-            <caret line="20" column="76" lean-forward="false" selection-start-line="20" selection-start-column="76" selection-end-line="20" selection-end-column="76" />
+          <first_editor relative-caret-position="320">
+            <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/java基础/adapter设计模式.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="297">
+            <caret line="90" column="10" lean-forward="true" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
             <folding />
           </first_editor>
           <second_editor />
