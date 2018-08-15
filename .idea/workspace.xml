@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1721e131-c0ce-4d15-be48-028aaa85b4db" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/第三方框架/LeakCanary的使用及原理.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/next/source/path/aa.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.deploy_git" afterPath="$PROJECT_DIR$/.deploy_git" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/java基础/Builder设计模式.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/java基础/单例模式的几种写法.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -17,16 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="db.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="174" lean-forward="false" selection-start-line="0" selection-start-column="174" selection-end-line="0" selection-end-column="174" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/about/index.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -66,18 +55,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LeakCanary的使用及原理.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LeakCanary的使用及原理.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/第三方框架/LeakCanary的使用及原理.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="72">
-                <caret line="521" column="23" lean-forward="false" selection-start-line="521" selection-start-column="23" selection-end-line="521" selection-end-column="23" />
+              <first_editor relative-caret-position="9440">
+                <caret line="530" column="35" lean-forward="false" selection-start-line="530" selection-start-column="35" selection-end-line="530" selection-end-column="35" />
                 <folding>
                   <marker date="1534302083646" expanded="true" signature="1799:1919" ph="/** Creates a {@link RefWatcher} that works out of the box, and starts watching activity ...*/" />
                   <marker date="1534302083646" expanded="true" signature="1978:2158" ph="{...}" />
                   <marker date="1534302083646" expanded="true" signature="2160:2255" ph="/** Builder to create a customized {@link RefWatcher} with appropriate Android defaults. ...*/" />
                   <marker date="1534302083646" expanded="true" signature="2323:2376" ph="{...}" />
                 </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="单例模式的几种写法.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/java基础/单例模式的几种写法.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="-637">
+                <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Builder设计模式.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/java基础/Builder设计模式.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="229">
+                <caret line="20" column="76" lean-forward="false" selection-start-line="20" selection-start-column="76" selection-end-line="20" selection-end-column="76" />
+                <folding />
               </first_editor>
               <second_editor />
             </state>
@@ -147,8 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/source/_posts/Markdown语法的使用.md" />
-        <option value="$PROJECT_DIR$/source/_posts/pyspider爬取mzitu图片.md" />
         <option value="$PROJECT_DIR$/themes/Demo.java" />
         <option value="$PROJECT_DIR$/source/_posts/Java虚拟机--自动内存管理机制.md" />
         <option value="$PROJECT_DIR$/source/_posts/Java虚拟机--垃圾收集器与内存分配策略.md" />
@@ -198,6 +211,8 @@
         <option value="$PROJECT_DIR$/source/about/index.md" />
         <option value="$PROJECT_DIR$/source/_posts/aaa.md" />
         <option value="$PROJECT_DIR$/source/_posts/第三方框架/LeakCanary的使用及原理.md" />
+        <option value="$PROJECT_DIR$/source/_posts/java基础/单例模式的几种写法.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Builder设计模式.md" />
       </list>
     </option>
   </component>
@@ -261,6 +276,13 @@
               <item name="source" type="462c0819:PsiDirectoryNode" />
               <item name="_posts" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="KBlogSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KBlogSource" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
+              <item name="java基础" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -278,18 +300,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/_posts" />
       <recent name="$PROJECT_DIR$/source/_posts/第三方框架" />
       <recent name="$PROJECT_DIR$/themes/next/source/path" />
       <recent name="$PROJECT_DIR$/themes/next/source/images" />
-      <recent name="$PROJECT_DIR$/source/_posts" />
       <recent name="D:\document\Blog\source\_posts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/_posts/java基础" />
       <recent name="$PROJECT_DIR$/themes/next/source/path" />
       <recent name="$PROJECT_DIR$/themes/next/source/.lieeber" />
       <recent name="$PROJECT_DIR$/themes/next/source/images" />
       <recent name="$PROJECT_DIR$/source" />
-      <recent name="$PROJECT_DIR$/themes/next/source" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -345,13 +367,21 @@
       <option name="project" value="LOCAL" />
       <updated>1530234154896</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="LeakCanary的使用及原理。">
+      <created>1534302476343</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1534302476343</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1944" y="23" width="1873" height="1058" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20074746" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20074746" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -406,7 +436,8 @@
     <MESSAGE value="merge" />
     <MESSAGE value="修改配置。" />
     <MESSAGE value="。" />
-    <option name="LAST_COMMIT_MESSAGE" value="。" />
+    <MESSAGE value="LeakCanary的使用及原理。" />
+    <option name="LAST_COMMIT_MESSAGE" value="LeakCanary的使用及原理。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -417,20 +448,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/数据结构-树.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/数据结构-查找.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/数据结构-快速排序的实现.md" />
     <entry file="file://$PROJECT_DIR$/source/_posts/Markdown的使用.md">
       <provider selected="true" editor-type-id="text-editor">
@@ -801,14 +818,36 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/第三方框架/LeakCanary的使用及原理.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="72">
-            <caret line="521" column="23" lean-forward="false" selection-start-line="521" selection-start-column="23" selection-end-line="521" selection-end-column="23" />
+          <first_editor relative-caret-position="9440">
+            <caret line="530" column="35" lean-forward="false" selection-start-line="530" selection-start-column="35" selection-end-line="530" selection-end-column="35" />
             <folding>
               <marker date="1534302083646" expanded="true" signature="1799:1919" ph="/** Creates a {@link RefWatcher} that works out of the box, and starts watching activity ...*/" />
               <marker date="1534302083646" expanded="true" signature="1978:2158" ph="{...}" />
               <marker date="1534302083646" expanded="true" signature="2160:2255" ph="/** Builder to create a customized {@link RefWatcher} with appropriate Android defaults. ...*/" />
               <marker date="1534302083646" expanded="true" signature="2323:2376" ph="{...}" />
             </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/java基础/单例模式的几种写法.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-637">
+            <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/java基础/Builder设计模式.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="229">
+            <caret line="20" column="76" lean-forward="false" selection-start-line="20" selection-start-column="76" selection-end-line="20" selection-end-column="76" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>
