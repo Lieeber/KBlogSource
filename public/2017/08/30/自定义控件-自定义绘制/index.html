@@ -1,0 +1,1602 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="自定义控件,自定义绘制," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Lieeber's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="¶自定义绘制思维导图">
+<meta name="keywords" content="自定义控件,自定义绘制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自定义绘制">
+<meta property="og:url" content="http://yoursite.com/2017/08/30/自定义控件-自定义绘制/index.html">
+<meta property="og:site_name" content="Lieeber&#39;s Blog">
+<meta property="og:description" content="¶自定义绘制思维导图">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/5cc1a78ely1fsomf4p6dsj24742doqv6.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/5cc1a78ely1fsomplwiv6j20h705176f.jpg">
+<meta property="og:updated_time" content="2018-06-26T07:57:03.869Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自定义绘制">
+<meta name="twitter:description" content="¶自定义绘制思维导图">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/5cc1a78ely1fsomf4p6dsj24742doqv6.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/30/自定义控件-自定义绘制/"/>
+
+
+
+
+
+  <title>自定义绘制 | Lieeber's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8189d5a89151e08eb9a35a3be96dfd2e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lieeber's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">欢迎光临我的技术博客。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/30/自定义控件-自定义绘制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lieeber">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://image-1252244366.costj.myqcloud.com/lieeber.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lieeber's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">自定义绘制</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-30T22:18:15+08:00">
+                2017-08-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/自定义控件/" itemprop="url" rel="index">
+                    <span itemprop="name">自定义控件</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/08/30/自定义控件-自定义绘制/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="自定义绘制思维导图"><a class="header-anchor" href="#自定义绘制思维导图">¶</a>自定义绘制思维导图</h3>
+<p><img src="https://ws1.sinaimg.cn/large/5cc1a78ely1fsomf4p6dsj24742doqv6.jpg" alt=""></p>
+<a id="more"></a>
+<h3 id="canvas-drawxxx"><a class="header-anchor" href="#canvas-drawxxx">¶</a>Canvas.drawXXX()</h3>
+<ol>
+<li>drawColor</li>
+<li>canvas.drawRGB</li>
+<li>canvas.drawARGB</li>
+<li>drawCircle</li>
+<li>drawRect</li>
+<li>drawPoint</li>
+<li>drawPoints</li>
+<li>drawOval</li>
+<li>drawLine</li>
+<li>drawLines</li>
+<li>drawRoundRect</li>
+<li>drawArc</li>
+<li>drawPath</li>
+<li>drawBitmap</li>
+<li>drawBitmapMesh
+<ul>
+<li>可以绘制具有网格拉伸效果的 Bitmap</li>
+</ul>
+</li>
+<li>drawText</li>
+</ol>
+<h3 id="paint"><a class="header-anchor" href="#paint">¶</a>Paint</h3>
+<ol>
+<li>颜色
+<ul>
+<li>setColor(int color)</li>
+<li>setARGB</li>
+<li>setShader
+<ul>
+<li>LinearGradient 线性渐变
+<ul>
+<li>CLAMP:</li>
+<li>MIRROR:</li>
+<li>REPEAT:</li>
+<li>概要: 三种着色规则</li>
+</ul>
+</li>
+<li>RadialGradient 辐射渐变</li>
+<li>SweepGradient 扫描渐变</li>
+<li>BitmapShader</li>
+<li>ComposeShader 混合着色器
+<ul>
+<li>ComposeShader() 在硬件加速下是不支持两个相同类型的 Shader 的</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>setColorFilter
+<ul>
+<li>LightingColorFilter
+<ul>
+<li>参数里的 mul 和  add 都是和颜色值格式相同的 int 值，其中 mul 用来和目标像素相乘，add 用来和目标像素相加</li>
+</ul>
+</li>
+<li>PorterDuffColorFilter
+<ul>
+<li>使用一个指定的颜色和一种指定的 PorterDuff.Mode 来与绘制对象进行合成</li>
+</ul>
+</li>
+<li>ColorMatrixColorFilter</li>
+</ul>
+</li>
+<li>setXfermode
+<ul>
+<li>PorterDuffXfermode</li>
+</ul>
+</li>
+<li>概要:  PorterDuff.Mode 在 Paint 一共有三处 API
+<ul>
+<li><img src="https://ws1.sinaimg.cn/large/5cc1a78ely1fsomplwiv6j20h705176f.jpg" alt=""></li>
+</ul>
+</li>
+<li>概要: Xfermode注意事项
+<ul>
+<li>使用离屏缓冲</li>
+<li>控制好透明区域</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>效果
+<ul>
+<li>setTextSize</li>
+<li>setPathEffect
+<ul>
+<li>DashPathEffect
+<ul>
+<li>使用虚线来绘制线条</li>
+</ul>
+</li>
+<li>CornerPathEffect
+<ul>
+<li>把所有拐角变成圆角</li>
+</ul>
+</li>
+<li>DiscretePathEffect
+<ul>
+<li>把线条进行随机的偏离，让轮廓变得乱七八糟
+<ul>
+<li>segmentLength  用来拼接的每个线段的长度</li>
+<li>deviation 偏离量</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PathDashPathEffect
+<ul>
+<li>使用一个 Path 来绘制「虚线」</li>
+<li>最后一个参数 style，是用来指定拐弯改变的时候 shape 的转换方式
+<ul>
+<li>TRANSLATE：位移</li>
+<li>ROTATE：旋转</li>
+<li>MORPH：变体</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SumPathEffect
+<ul>
+<li>分别按照两种 PathEffect 分别对目标进行绘制</li>
+</ul>
+</li>
+<li>ComposePathEffect
+<ul>
+<li>它是先对目标 Path 使用一个 PathEffect，然后再对这个改变后的 Path 使用另一个 PathEffect</li>
+</ul>
+</li>
+<li>PathEffect 在有些情况下不支持硬件加速
+<ul>
+<li>Canvas.drawLine() 和 Canvas.drawLines() 方法画直线时，setPathEffect() 是不支持硬件加速的；</li>
+<li>PathDashPathEffect 对硬件加速的支持也有问题，所以当使用 PathDashPathEffect 的时候，最好也把硬件加速关了。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>setShadowLayer
+<ul>
+<li>在之后的绘制内容下面加一层阴影</li>
+</ul>
+</li>
+<li>setMaskFilter
+<ul>
+<li>BlurMaskFilter
+<ul>
+<li>模糊效果的 MaskFilter
+<ul>
+<li>NORMAL: 内外都模糊绘制</li>
+<li>SOLID: 内部正常绘制，外部模糊</li>
+<li>INNER: 内部模糊，外部不绘制</li>
+<li>OUTER: 内部不绘制，外部模糊（什么鬼？）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>EmbossMaskFilter
+<ul>
+<li>浮雕效果的 MaskFilter</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>setStyle(Paint.Style style)</li>
+<li>setAntiAlias</li>
+<li>setStrokeWidth</li>
+<li>setStrokeCap
+<ul>
+<li>BUTT 平头、ROUND 圆头、SQUARE 方头</li>
+</ul>
+</li>
+<li>setStrokeJoin
+<ul>
+<li>MITER 尖角、 BEVEL 平角和 ROUND 圆角</li>
+</ul>
+</li>
+<li>setStrokeMiter
+<ul>
+<li>它用于设置 MITER 型拐角的延长线的最大值</li>
+</ul>
+</li>
+<li>setDither
+<ul>
+<li>设置图像的抖动</li>
+</ul>
+</li>
+<li>setFilterBitmap
+<ul>
+<li>设置是否使用双线性过滤来绘制 Bitmap</li>
+</ul>
+</li>
+<li>getFillPath
+<ul>
+<li>getFillPath(src, dst) 会计算出实际 Path，然后把结果保存在 dst 里。</li>
+</ul>
+</li>
+<li>getTextPath</li>
+<li>概要: 色彩优化</li>
+<li>概要: 线条形状</li>
+<li>概要: 获取绘制的 Path</li>
+</ul>
+</li>
+<li>文字绘制相关</li>
+<li>初始化类
+<ul>
+<li>reset
+<ul>
+<li>重置 Paint 的所有属性为默认值。相当于重新 new 一个。</li>
+</ul>
+</li>
+<li>set
+<ul>
+<li>把 src 的所有属性全部复制过来。</li>
+</ul>
+</li>
+<li>setFlags
+<ul>
+<li>paint.setFlags(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="path"><a class="header-anchor" href="#path">¶</a>Path</h3>
+<ol>
+<li>addXxx
+<ul>
+<li>addCircle</li>
+<li>addOval</li>
+<li>addRect</li>
+<li>addRoundRect</li>
+<li>addArc</li>
+<li>addPath</li>
+</ul>
+</li>
+<li>xxxTo
+<ul>
+<li>lineTo/rLineTo</li>
+<li>quadTo / rQuadTo</li>
+<li>cubicTo / rCubicTo</li>
+<li>moveTo / rMoveTo</li>
+<li>arcTo
+<ul>
+<li>forceMoveTo:true强制移动到新的位置</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>close()封闭当前子图形</li>
+<li>Path.setFillType
+<ul>
+<li>EVEN_ODD
+<ul>
+<li>even-odd rule （奇偶原则）：对于平面中的任意一点，向任意方向射出一条射线，这条射线和图形相交的次数（相交才算，相切不算哦）如果是奇数，则这个点被认为在图形内部，是要被涂色的区域；如果是偶数，则这个点被认为在图形外部，是不被涂色的区域。</li>
+</ul>
+</li>
+<li>WINDING （默认值）
+<ul>
+<li>非零环绕数原则</li>
+</ul>
+</li>
+<li>INVERSE_EVEN_ODD</li>
+<li>INVERSE_WINDING</li>
+</ul>
+</li>
+<li>setLastPoint
+<ul>
+<li>重置当前path中最后一个点位置，如果在绘制之前调用，效果和moveTo相同</li>
+</ul>
+</li>
+<li>isEmpty
+<ul>
+<li>判断Path是否为空</li>
+</ul>
+</li>
+<li>isRect
+<ul>
+<li>判断Path是否是一个矩形</li>
+</ul>
+</li>
+<li>set
+<ul>
+<li>用新的路径替换到当前路径所有内容</li>
+</ul>
+</li>
+<li>offset
+<ul>
+<li>对当前路径之前的操作进行偏移(不会影响之后的操作)</li>
+</ul>
+</li>
+<li>op
+<ul>
+<li>对两个Path进行布尔运算(即取交集、并集等操作)
+<ul>
+<li>DIFFERENCE
+<ul>
+<li>Path1中减去Path2后剩下的部分</li>
+</ul>
+</li>
+<li>REVERSE_DIFFERENCE
+<ul>
+<li>Path2中减去Path1后剩下的部分</li>
+</ul>
+</li>
+<li>INTERSECT
+<ul>
+<li>Path1与Path2相交的部分</li>
+</ul>
+</li>
+<li>UNION
+<ul>
+<li>包含全部Path1和Path2</li>
+</ul>
+</li>
+<li>XOR
+<ul>
+<li>包含Path1与Path2但不包括两者相交的部分</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>computeBounds
+<ul>
+<li>计算Path的边界</li>
+</ul>
+</li>
+<li>reset, rewind
+<ul>
+<li>清除Path中的内容，reset不保留内部数据结构，但会保留FillType.rewind会保留内部的数据结构，但不保留FillType</li>
+</ul>
+</li>
+<li>transform
+<ul>
+<li>矩阵变换</li>
+</ul>
+</li>
+</ol>
+<h3 id="pathmeasure"><a class="header-anchor" href="#pathmeasure">¶</a>PathMeasure</h3>
+<ol>
+<li>setPath
+<ul>
+<li>关联一个Path</li>
+</ul>
+</li>
+<li>isClosed
+<ul>
+<li>是否闭合</li>
+</ul>
+</li>
+<li>getLength
+<ul>
+<li>获取Path的长度</li>
+</ul>
+</li>
+<li>nextContour
+<ul>
+<li>跳转到下一个轮廓</li>
+</ul>
+</li>
+<li>getSegment
+<ul>
+<li>截取片段</li>
+</ul>
+</li>
+<li>getPosTan
+<ul>
+<li>用于得到路径上某一长度的位置以及该位置的正切值</li>
+</ul>
+</li>
+<li>getMatrix
+<ul>
+<li>获取指定长度的位置坐标及该点Matrix</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/自定义控件/" rel="tag"># 自定义控件</a>
+          
+            <a href="/tags/自定义绘制/" rel="tag"># 自定义绘制</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/18/计算机网络-数据链路层/" rel="next" title="数据链路层">
+                <i class="fa fa-chevron-left"></i> 数据链路层
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/02/自定义控件-文字的绘制/" rel="prev" title="文字的绘制">
+                文字的绘制 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://image-1252244366.costj.myqcloud.com/lieeber.jpg"
+               alt="lieeber" />
+          <p class="site-author-name" itemprop="name">lieeber</p>
+           
+              <p class="site-description motion-element" itemprop="description">时光足迹，心灵手记。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Lieeber" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.weibo.com/108504315" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/lieeber/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.eason-li.cn/" title="eason-li" target="_blank">eason-li</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="迟建强" target="_blank">迟建强</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义绘制思维导图"><span class="nav-number">1.</span> <span class="nav-text">¶自定义绘制思维导图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#canvas-drawxxx"><span class="nav-number">2.</span> <span class="nav-text">¶Canvas.drawXXX()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#paint"><span class="nav-number">3.</span> <span class="nav-text">¶Paint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#path"><span class="nav-number">4.</span> <span class="nav-text">¶Path</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pathmeasure"><span class="nav-number">5.</span> <span class="nav-text">¶PathMeasure</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lieeber</span>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "54270e564b8043759233e4d5e4a32650",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
